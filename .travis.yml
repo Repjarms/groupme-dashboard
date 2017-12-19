@@ -11,7 +11,7 @@ services:
 - docker
 before_install:
 - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
-- docker build -t repjarms/test-repo
+- docker build -t repjarms/test-repo .
 - docker run -d -p 127.0.0.1:80:4567 repjarms/test-repo /bin/sh -c "cd root/test-repo; bundle exec foreman start;"
 - docker ps -a
 - docker run repjarms/test-repo /bin/sh -c "cd /root/test-repo; bundle exec rake test"
