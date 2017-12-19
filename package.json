@@ -7,7 +7,7 @@
     "start": "node server.js",
     "build": "webpack --config ./config/webpack.config.prod.js",
     "lint": "./node_modules/eslint/bin/eslint.js .",
-    "test": "jest . --bail"
+    "test": "npm run lint && jest . --bail"
   },
   "keywords": [
     "GroupMe",
