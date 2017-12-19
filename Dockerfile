@@ -12,4 +12,4 @@ RUN apt-get clean
 # Clone application within image
 RUN git clone https://github.com/Repjarms/groupme-dashboard.git /root/test-repo
 RUN cd /root/test-repo; npm i; npm run build;
-CMD npm run build && NODE_ENV=production node server.js
+CMD cd /root/test-repo; npm run build && NODE_ENV=production node server.js
