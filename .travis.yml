@@ -12,9 +12,8 @@ services:
 before_install:
 - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
 - docker build -t repjarms/test-repo .
-- docker run -d -p 127.0.0.1:80:4567 repjarms/test-repo /bin/sh -c "cd /root/test-repo; npm i"
+- docker run -d -p 127.0.0.1:80:4567 repjarms/test-repo /bin/sh -c "cd /root/test-repo; npm i; npm test"
 - docker ps -a
-- docker run repjarms/test-repo /bin/sh -c "cd /root/test-repo; npm test"
 env:
   global:
   - secure: iGCNvYcJTompAPc2DW1JS491OE0oRi+mthUYGCShGi789LleIs7gH5kPRN84GKsJlbu+6Ai4xbbsnWoPaw8sOhN9ro1cph0SnB2ogNOBNKp67MVARTZkqrK6us6tei28UujADMXNCR34b3pFQT7QgsRcu55RsaahImRaPnDpX6hjAc5mrHw/cJM3tXyce6keQj1lEBoQVP3dn+yQ6PcpJyOLeZebo2t7xAFh+uFHfTS6ZT9eIcCu/op9XF6Awb4inWb3l+2iLIVJA9ezBaPZ7VPJ8ujus5b69PRDBobsNMcF+mn9uJn6ci70MViXX7Tv1i4TWm3jDCWY/d55f3yiRvJEZlHRvT4YZP4rVoZ1c+/vS85I0c4lxvWST0gLu2zzzTYkN+iW0j6lRAadPz5tDd4FCzwgmfoXuBc0FSQN9v7p+v2OzZtJZb1pUT8cjzeXwV84JH/4NK3UjHUZCOL6Mgyt1k8i3sSy1LRQAUWt9tjQv/b9tkWHfvFnMIqxG8n5IEWUUI1e454COoF4NC2lFKvIJonCm0CpN02z0umzhigwvFt198jHbvYncpTNjxeI+jGYF7QQeZxqlJLbtDIFZHkIz3eQJXXQ4qdP/iXojfmrWstD/+JMIYc3VQFG+AsPLyL1J8xUtZEcsXrBdIEpCkwid2fO+/01tkQkALp5F/0=
