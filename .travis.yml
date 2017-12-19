@@ -12,7 +12,7 @@ services:
 before_install:
 - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
 - docker build -t repjarms/test-repo .
-- docker run -d -p 127.0.0.1:80:4567 repjarms/test-repo /bin/sh -c "cd /root/test-repo; npm i; npm test"
+- docker run -d -p 127.0.0.1:80:4567 repjarms/test-repo /bin/sh -c "cd /root/test-repo; npm i; npm test; npm run build;"
 - docker ps -a
 env:
   global:
