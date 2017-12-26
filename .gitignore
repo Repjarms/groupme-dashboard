@@ -3,6 +3,9 @@ node_modules/
 # dist
 dist/
 
+# npm debug
+npm-debug.log
+
 # vim swap
 *.swp
 *.swo
